@@ -1,108 +1,378 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="ru">
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Интексная страниц "Об авторе"</title>
-    <link rel='stylesheet' href='main.css'>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6f9;
-      color: #333;
-    }
-
-    header {
-      background: #4a90e2;
-      color: white;
-      padding: 40px;
-      text-align: center;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    h1, h2 {
-      margin: 0 0 10px;
-    }
-
-    .card {
-      background: #f0f0f0;
-      padding: 15px;
-      margin-top: 10px;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: gray;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Портфолио | Николь Харитошкина</title>
+    <!-- Bootstrap 5 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: #f0f2f5;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #4a90e2 0%, #1a3c5e 100%);
+            color: white;
+            padding: 60px 0 40px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+        }
+        .header-gradient h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+        }
+        .header-gradient .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .section-title {
+            border-left: 5px solid #4a90e2;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: #1a3c5e;
+        }
+        .screenshot-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .screenshot-img:hover {
+            transform: scale(1.01);
+        }
+        .code-block {
+            background: #1e2a3a;
+            color: #e4e9f0;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .code-block .cmd {
+            color: #61dafb;
+        }
+        .code-block .out {
+            color: #98c379;
+        }
+        .badge-custom {
+            background: #4a90e2;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+        }
+        footer {
+            background: #1a3c5e;
+            color: rgba(255,255,255,0.7);
+            padding: 25px 0;
+            margin-top: 40px;
+            border-radius: 30px 30px 0 0;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .list-command {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            border-left: 4px solid #4a90e2;
+        }
+        .list-command i {
+            color: #4a90e2;
+            margin-right: 8px;
+        }
+        .step-number {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>Привет, я Харитошкина Николь,475224,Р3269 </h1>
-  <p>Добро пожаловать на сайт обо мне</p>
+
+<header class="header-gradient text-center">
+    <div class="container">
+        <h1><i class="bi bi-person-circle me-3"></i>Николь Харитошкина</h1>
+        <p class="subtitle">475224 · Р3269 · 2 курс ИТМО</p>
+        <p class="subtitle">«Компьютерные технологии в дизайне»</p>
+        <div class="mt-3">
+            <span class="badge-custom"><i class="bi bi-code-slash me-1"></i>Webpack</span>
+            <span class="badge-custom"><i class="bi bi-box me-1"></i>Docker</span>
+            <span class="badge-custom"><i class="bi bi-bootstrap me-1"></i>Bootstrap</span>
+        </div>
+    </div>
 </header>
 
-<section>
-  <h2>Обо мне</h2>
-  <p>Я начинающий дизайнер и разработчик, учусь на 2 курсе университета ИТМО на программе "Компьютерные технологии в дизайне".</p>
-</section>
+<!-- ===== Основной контент ===== -->
+<main class="container">
 
-<section>
-  <h2>Мои работы</h2>
-    <h3>Логотип для танцевальной команды</h3>
-    <p>Мой первый опыт работы с клиентом. Команда LABL.PPL, разработала логотип который в дальнейшем использовался для создания их кастомного мерча(даже купила кофту с этим логотипом на память).</p>
-  </div>
-    <h3>Постер для танцевального класса</h3>
-    <p>Разработала дизайн для афиши мастер классов, ссылка на пост:</p>
-  </div>
-    <h3>Первая моя работа с Github Pages</h3>
-    <p>Мой сайт портфолио, не уверена что он выполен хорошо, но надо всегда с чего то начинать.</p>
-  </div>
-    <h3>Пока что на этом у меня больше нету работ</h3>
-    <p>Но если вдруг вы захотите сотрудничать, свои контакты оставлю ниже.</p>
+    <!-- ====== Обо мне ====== -->
+    <section class="mb-5">
+        <h2 class="section-title"><i class="bi bi-person me-2"></i>Обо мне</h2>
+        <div class="card card-hover">
+            <div class="card-body">
+                <p class="card-text fs-5">Я начинающий дизайнер и разработчик, учусь на 2 курсе университета ИТМО на программе <strong>«Компьютерные технологии в дизайне»</strong>.</p>
+                <p class="card-text">Мне интересно совмещать визуальное искусство и технологии, создавать функциональные и красивые цифровые продукты.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Мои работы ====== -->
+    <section class="mb-5">
+        <h2 class="section-title"><i class="bi bi-briefcase me-2"></i>Мои работы</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-hover h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-palette me-2 text-primary"></i>Логотип для LABL.PPL</h5>
+                        <p class="card-text">Мой первый опыт работы с клиентом. Разработала логотип, который использовался для создания кастомного мерча команды.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-hover h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-pencil-square me-2 text-primary"></i>Постер для мастер-классов</h5>
+                        <p class="card-text">Дизайн афиши для танцевальных мастер-классов.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-hover">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-github me-2 text-primary"></i>Первый сайт на GitHub Pages</h5>
+                        <p class="card-text">Этот сайт — моя первая работа с GitHub Pages. Я учусь публиковать проекты и вести портфолио.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Задание после теста (TIME) ====== -->
+    <section class="mb-5">
+        <h2 class="section-title"><i class="bi bi-clock-history me-2"></i>Задание после теста (Time)</h2>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5>1. Откуда берётся переменная <code>x</code>? Какое у неё значение?</h5>
+                <p><code>x</code> — глобальная переменная, хранит начальный момент времени в миллисекундах (Unix timestamp). Она используется для расчёта прошедшего времени. <code>Date.now()</code> возвращает текущее время в момент каждой итерации.</p>
+            </div>
+        </div>
+
+        <div class="card card-hover">
+            <div class="card-body">
+                <h5>2. Перепишите выражение без IIFE</h5>
+                <p><strong>Без IIFE:</strong></p>
+                <div class="code-block">
+console.time('a');
+y = 2 ** 15;
+x = Date.now();
+while (Date.now() - x &lt; y) ;
+console.timeEnd('a');
+                </div>
+                <p class="mt-2"><strong>Что такое IIFE?</strong> Это функция, которая выполняется сразу после создания, без отдельного вызова.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== отчет по webpack ====== -->
+    <section class="mb-5">
+        <h2 class="section-title"><i class="bi bi-boxes me-2"></i>Отчёт по Webpack и Docker</h2>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5><span class="step-number">1</span>Инициализация проекта и установка зависимостей</h5>
+                <div class="list-command">
+                    <i class="bi bi-terminal"></i> npm init -y
+                </div>
+                <div class="list-command mt-2">
+                    <i class="bi bi-terminal"></i> npm i luxon
+                </div>
+                <div class="list-command mt-2">
+                    <i class="bi bi-terminal"></i> npm i -D webpack webpack-cli serve
+                </div>
+                <p class="mt-2 text-muted"><small><i class="bi bi-info-circle"></i> Установили Webpack для сборки, luxon для работы с датой и временем.</small></p>
+            </div>
+        </div>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5><span class="step-number">2</span>Настройка Webpack</h5>
+                <p>Создан файл <code>webpack.config.js</code> с точкой входа <code>src/index.js</code> и выходным файлом <code>dist/main.js</code>.</p>
+                <div class="code-block">
+const path = require('path');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js'
+    },
+    mode: 'development'
+};
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5><span class="step-number">3</span>Создание кода с Luxon</h5>
+                <p>В <code>src/index.js</code> написан код для отображения текущего времени с обновлением каждую секунду.</p>
+                <div class="code-block">
+const { DateTime } = require('luxon');
+
+const hh = document.createElement('h1');
+document.body.appendChild(hh);
+
+setInterval(() => {
+    hh.textContent = DateTime.local().setLocale('ru').toFormat('dd.Ll.Y HH:mm:ss');
+}, 1000);
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5><span class="step-number">4</span>Сборка проекта</h5>
+                <div class="list-command">
+                    <i class="bi bi-terminal"></i> npx webpack
+                </div>
+                <p class="mt-2 text-muted"><small><i class="bi bi-check-circle text-success"></i> Результат: файл <code>dist/main.js</code> (включает код + библиотеку luxon).</small></p>
+            </div>
+        </div>
+
+        <h4 class="mt-4 mb-3"><i class="bi bi-image me-2"></i>Скриншоты выполнения</h4>
+
+        <!-- Скриншот 1.1 -->
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5>Скриншот 1.1 — Установка зависимостей</h5>
+                <img src="task101.1.png" alt="Установка зависимостей" class="screenshot-img" onerror="this.src='task10-1.png'">
+            </div>
+        </div>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5>Скриншот 1.2 — сборка Webpack</h5>
+                <img src="task101.2.png" alt="Сборка Webpack" class="screenshot-img" onerror="this.src='task10-2.png'">
+            </div>
+        </div>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5>Скриншот «Реализация» — Работа страницы с часами</h5>
+                <img src="task10.png" alt="Реализация страницы" class="screenshot-img" onerror="this.src='task10-real.png'">
+                <p class="mt-2 text-muted"><small><i class="bi bi-pin"></i> Отображение текущего времени с обновлением каждую секунду, инициализация DOM-элемента.</small></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="section-title"><i class="bi bi-box me-2"></i>Работа с Docker</h2>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5><span class="step-number">1</span>Создание Dockerfile</h5>
+                <div class="code-block">
+FROM node:24-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npx webpack
+
+EXPOSE 8080
+
+RUN npm install -g serve
+
+CMD ["serve", "-s", ".", "-l", "8080"]
+                </div>
+                <p class="mt-2 text-muted"><small><i class="bi bi-info-circle"></i> Используется образ <code>node:24-alpine</code> для лёгкости и быстродействия.</small></p>
+            </div>
+        </div>
+
+        <div class="card card-hover mb-3">
+            <div class="card-body">
+                <h5><span class="step-number">2</span>Сборка Docker-образа</h5>
+                <div class="list-command">
+                    <i class="bi bi-terminal"></i> docker build -t my-webpack-app .
+                </div>
+                <p class="mt-2 text-muted"><small><i class="bi bi-check-circle text-success"></i> Создан образ с именем <code>my-webpack-app</code>.</small></p>
+            </div>
+        </div>
+
+        <div class="card card-hover">
+            <div class="card-body">
+                <h5><span class="step-number">3</span>Запуск контейнера</h5>
+                <div class="list-command">
+                    <i class="bi bi-terminal"></i> docker run -p 8080:8080 my-webpack-app
+                </div>
+                <p class="mt-2 text-muted"><small><i class="bi bi-check-circle text-success"></i> Приложение доступно по адресу <code>http://localhost:8080</code>.</small></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="section-title"><i class="bi bi-envelope me-2"></i>Контакты</h2>
+        <div class="card card-hover">
+            <div class="card-body text-center">
+                <p class="fs-5">
+                    <i class="bi bi-envelope-fill me-2 text-primary"></i>
+                    <a href="mailto:nikole.harioshkina@gmail.com">nikole.harioshkina@gmail.com</a>
+                </p>
+                <p class="text-muted">Всегда открыта для новых проектов и сотрудничества!</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-0">© 2026 Николь Харитошкина · Портфолио</p>
+        <p class="mb-0 small">
+            <i class="bi bi-github me-1"></i>
+            <a href="https://github.com/nikis6" target="_blank">GitHub</a>
+            &nbsp;·&nbsp;
+            <i class="bi bi-box me-1"></i> Docker
+            &nbsp;·&nbsp;
+            <i class="bi bi-bootstrap me-1"></i> Bootstrap 5
+        </p>
     </div>
-</section>
-    
-<section>
-  <h2>Time задание после теста</h2>
-    <h3>1.Как вы думаете откуда береться переменная? Какое у нее значение?</h3>
-    <p>Х является глобальной переменной, переменная хранит начальный момент времени в миллисекундах (Unix timestamp). Она используется для расчета прошедшего времени. Date.now() - текущее время в момент каждой итерации.</p>
-  </div>
-    <h3>2. Попросите переписать это выражение без использования IIFE и удостоверьтесь, что работает этот вариант аналогично.</h3>
-    <p>без IIFE:</p>   
-</p>console.time('a');</p>
-</p>y = 2 ** 15;</p>
-</p>x = Date.now();</p>
-</p>while (Date.now() - x < y) ;</p>
-</p>console.timeEnd('a');</p> </p>
-</p>IIFE - это функция которая выполняется сразу после ее создания, без необходимости отдельного вызова</p>
-  </div>
-</section>
-
-<section>
-   <h3>Результат сборки Webpack</h3>
-<img src="task10.png" alt="Скриншот сборки Webpack" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 10px 0;">
-</section>
-
-
-<section>
-  <h2>Контакты для связи</h2>
-  <p>Email: nikole.harioshkina@gmail.com</p>
-</section>
-
-<footer>
-  © 2026 Моё портфолио
 </footer>
+  
 </body>
 </html>
