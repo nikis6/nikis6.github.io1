@@ -6,10 +6,12 @@
     <title>Портфолио | Николь Харитошкина</title>
     <!-- Bootstrap 5 (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Дополнительные иконки -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         body {
             background: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .header-gradient {
             background: linear-gradient(135deg, #4a90e2 0%, #1a3c5e 100%);
@@ -39,34 +41,6 @@
             margin-bottom: 25px;
             color: #1a3c5e;
         }
-        .screenshot-img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #dee2e6;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-        }
-        .screenshot-img:hover {
-            transform: scale(1.01);
-        }
-        .code-block {
-            background: #1e2a3a;
-            color: #e4e9f0;
-            padding: 20px;
-            border-radius: 12px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-break: break-all;
-        }
-        .code-block .cmd {
-            color: #61dafb;
-        }
-        .code-block .out {
-            color: #98c379;
-        }
         .badge-custom {
             background: #4a90e2;
             color: white;
@@ -74,6 +48,14 @@
             border-radius: 20px;
             font-size: 0.8rem;
             margin-right: 6px;
+        }
+        .btn-outline-custom {
+            border-color: #4a90e2;
+            color: #4a90e2;
+        }
+        .btn-outline-custom:hover {
+            background: #4a90e2;
+            color: white;
         }
         footer {
             background: #1a3c5e;
@@ -89,35 +71,21 @@
         footer a:hover {
             text-decoration: underline;
         }
-        .list-command {
-            background: #f8f9fa;
-            border-radius: 8px;
+        .code-block {
+            background: #1e2a3a;
+            color: #e4e9f0;
             padding: 15px 20px;
+            border-radius: 10px;
             font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            border-left: 4px solid #4a90e2;
-        }
-        .list-command i {
-            color: #4a90e2;
-            margin-right: 8px;
-        }
-        .step-number {
-            display: inline-block;
-            background: #4a90e2;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-weight: bold;
             font-size: 0.85rem;
-            margin-right: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
         }
     </style>
 </head>
 <body>
-
+    
 <header class="header-gradient text-center">
     <div class="container">
         <h1><i class="bi bi-person-circle me-3"></i>Николь Харитошкина</h1>
@@ -131,10 +99,8 @@
     </div>
 </header>
 
-<!-- ===== Основной контент ===== -->
 <main class="container">
 
-    <!-- ====== Обо мне ====== -->
     <section class="mb-5">
         <h2 class="section-title"><i class="bi bi-person me-2"></i>Обо мне</h2>
         <div class="card card-hover">
@@ -145,7 +111,6 @@
         </div>
     </section>
 
-    <!-- ====== Мои работы ====== -->
     <section class="mb-5">
         <h2 class="section-title"><i class="bi bi-briefcase me-2"></i>Мои работы</h2>
         <div class="row g-4">
@@ -161,7 +126,7 @@
                 <div class="card card-hover h-100">
                     <div class="card-body">
                         <h5 class="card-title"><i class="bi bi-pencil-square me-2 text-primary"></i>Постер для мастер-классов</h5>
-                        <p class="card-text">Дизайн афиши для танцевальных мастер-классов.</p>
+                        <p class="card-text">Дизайн афиши для танцевальных мастер-классов. Работа выполнена в рамках учебного проекта.</p>
                     </div>
                 </div>
             </div>
@@ -175,8 +140,7 @@
             </div>
         </div>
     </section>
-
-    <!-- ====== Задание после теста (TIME) ====== -->
+    
     <section class="mb-5">
         <h2 class="section-title"><i class="bi bi-clock-history me-2"></i>Задание после теста (Time)</h2>
 
@@ -203,144 +167,22 @@ console.timeEnd('a');
         </div>
     </section>
 
-    <!-- ====== отчет по webpack ====== -->
     <section class="mb-5">
         <h2 class="section-title"><i class="bi bi-boxes me-2"></i>Отчёт по Webpack и Docker</h2>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5><span class="step-number">1</span>Инициализация проекта и установка зависимостей</h5>
-                <div class="list-command">
-                    <i class="bi bi-terminal"></i> npm init -y
+        <div class="card card-hover border-primary border-2">
+            <div class="card-body text-center py-4">
+                <i class="bi bi-file-code-fill text-primary" style="font-size: 3rem;"></i>
+                <h4 class="mt-3">Детальный отчёт по сборке проекта</h4>
+                <p class="text-muted">
+                    Сборка с Webpack, работа с библиотекой Luxon, подключение Bootstrap,
+                    создание Dockerfile и запуск в контейнере.
+                </p>
+                <ul class="list-unstyled text-start d-inline-block text-muted">
+                <div class="mt-3">
+                    <a href="webpack-report.html" class="btn btn-primary btn-lg">
+                        <i class="bi bi-box-arrow-right me-2"></i>Перейти к отчёту
+                    </a>
                 </div>
-                <div class="list-command mt-2">
-                    <i class="bi bi-terminal"></i> npm i luxon
-                </div>
-                <div class="list-command mt-2">
-                    <i class="bi bi-terminal"></i> npm i -D webpack webpack-cli serve
-                </div>
-                <p class="mt-2 text-muted"><small><i class="bi bi-info-circle"></i> Установили Webpack для сборки, luxon для работы с датой и временем.</small></p>
-            </div>
-        </div>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5><span class="step-number">2</span>Настройка Webpack</h5>
-                <p>Создан файл <code>webpack.config.js</code> с точкой входа <code>src/index.js</code> и выходным файлом <code>dist/main.js</code>.</p>
-                <div class="code-block">
-const path = require('path');
-
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
-    },
-    mode: 'development'
-};
-                </div>
-            </div>
-        </div>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5><span class="step-number">3</span>Создание кода с Luxon</h5>
-                <p>В <code>src/index.js</code> написан код для отображения текущего времени с обновлением каждую секунду.</p>
-                <div class="code-block">
-const { DateTime } = require('luxon');
-
-const hh = document.createElement('h1');
-document.body.appendChild(hh);
-
-setInterval(() => {
-    hh.textContent = DateTime.local().setLocale('ru').toFormat('dd.Ll.Y HH:mm:ss');
-}, 1000);
-                </div>
-            </div>
-        </div>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5><span class="step-number">4</span>Сборка проекта</h5>
-                <div class="list-command">
-                    <i class="bi bi-terminal"></i> npx webpack
-                </div>
-                <p class="mt-2 text-muted"><small><i class="bi bi-check-circle text-success"></i> Результат: файл <code>dist/main.js</code> (включает код + библиотеку luxon).</small></p>
-            </div>
-        </div>
-
-        <h4 class="mt-4 mb-3"><i class="bi bi-image me-2"></i>Скриншоты выполнения</h4>
-
-        <!-- Скриншот 1.1 -->
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5>Скриншот 1.1 — Установка зависимостей</h5>
-                <img src="task101.1.png" alt="Установка зависимостей" class="screenshot-img" onerror="this.src='task10-1.png'">
-            </div>
-        </div>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5>Скриншот 1.2 — сборка Webpack</h5>
-                <img src="task101.2.png" alt="Сборка Webpack" class="screenshot-img" onerror="this.src='task10-2.png'">
-            </div>
-        </div>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5>Скриншот «Реализация» — Работа страницы с часами</h5>
-                <img src="task10.png" alt="Реализация страницы" class="screenshot-img" onerror="this.src='task10-real.png'">
-                <p class="mt-2 text-muted"><small><i class="bi bi-pin"></i> Отображение текущего времени с обновлением каждую секунду, инициализация DOM-элемента.</small></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="mb-5">
-        <h2 class="section-title"><i class="bi bi-box me-2"></i>Работа с Docker</h2>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5><span class="step-number">1</span>Создание Dockerfile</h5>
-                <div class="code-block">
-FROM node:24-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-RUN npx webpack
-
-EXPOSE 8080
-
-RUN npm install -g serve
-
-CMD ["serve", "-s", ".", "-l", "8080"]
-                </div>
-                <p class="mt-2 text-muted"><small><i class="bi bi-info-circle"></i> Используется образ <code>node:24-alpine</code> для лёгкости и быстродействия.</small></p>
-            </div>
-        </div>
-
-        <div class="card card-hover mb-3">
-            <div class="card-body">
-                <h5><span class="step-number">2</span>Сборка Docker-образа</h5>
-                <div class="list-command">
-                    <i class="bi bi-terminal"></i> docker build -t my-webpack-app .
-                </div>
-                <p class="mt-2 text-muted"><small><i class="bi bi-check-circle text-success"></i> Создан образ с именем <code>my-webpack-app</code>.</small></p>
-            </div>
-        </div>
-
-        <div class="card card-hover">
-            <div class="card-body">
-                <h5><span class="step-number">3</span>Запуск контейнера</h5>
-                <div class="list-command">
-                    <i class="bi bi-terminal"></i> docker run -p 8080:8080 my-webpack-app
-                </div>
-                <p class="mt-2 text-muted"><small><i class="bi bi-check-circle text-success"></i> Приложение доступно по адресу <code>http://localhost:8080</code>.</small></p>
             </div>
         </div>
     </section>
@@ -373,6 +215,8 @@ CMD ["serve", "-s", ".", "-l", "8080"]
         </p>
     </div>
 </footer>
-  
+
+<!-- Bootstrap JS (для интерактивности) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
